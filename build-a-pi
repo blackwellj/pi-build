@@ -386,6 +386,21 @@ sudo apt-get --fix-broken -y install
 sudo dpkg -i wsjtx_2.1.0_armhf.deb
 fi
 
+if [ $Gridtracker = "yes" ] > /dev/null 2>&1
+then
+echo;echo;echo
+echo "##################################################"
+echo "##########INSTALLING Gridtracker"
+echo "##################################################"
+sleep 2
+cd $DIR
+wget --no-check-certificate https://www.dropbox.com/s/r30a6zwh5xzwo7x/GridTracker-Linux-Arm-1.20.0116.tar.gz?dl=1
+tar -xzf GridTracker-Linux-Arm-1.20.0116.tar
+sudo dpkg -i GridTracker-Linux-Arm-1.20.0116.deb
+sudo apt-get --fix-broken -y install
+sudo dpkg -i GridTracker-Linux-Arm-1.20.0116.deb
+fi
+
 if [ $CHIRP = "yes" ] > /dev/null 2>&1
 then
 echo;echo;echo
